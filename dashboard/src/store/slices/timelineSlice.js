@@ -72,7 +72,7 @@ const timelineSlice = createSlice({
 export const getAllTimelines = () => async (dispatch) => {
     dispatch(timelineSlice.actions.getAllTimelineRequest());
     try {
-        const { data } = await axios.get("http://localhost:4000/api/v1/timeline/getall",
+        const { data } = await axios.get("https://myportfolio-with-admin.onrender.com/api/v1/timeline/getall",
         {
             withCredentials: true
         });
@@ -87,7 +87,7 @@ export const getAllTimelines = () => async (dispatch) => {
 export const deleteTimeline = (id) => async (dispatch) => {
     dispatch(timelineSlice.actions.deleteTimelineRequest());
     try {
-        const { data } = await axios.delete(`http://localhost:4000/api/v1/timeline/delete/${id}`,
+        const { data } = await axios.delete(`https://myportfolio-with-admin.onrender.com/api/v1/timeline/delete/${id}`,
         {
             withCredentials: true
         });
@@ -102,7 +102,7 @@ export const deleteTimeline = (id) => async (dispatch) => {
 export const addNewTimeline = (timelineDate) => async (dispatch) => {
     dispatch(timelineSlice.actions.addTimelineRequest());
     try {
-        const { data } = await axios.post("http://localhost:4000/api/v1/timeline/add", timelineDate,
+        const { data } = await axios.post("https://myportfolio-with-admin.onrender.com/api/v1/timeline/add", timelineDate,
         {
             withCredentials: true,
             headers: {'Content-Type': "application/json"}

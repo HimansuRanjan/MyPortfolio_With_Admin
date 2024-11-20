@@ -87,7 +87,7 @@ const projectSlice = createSlice({
 export const getAllProjects = () => async (dispatch) => {
     dispatch(projectSlice.actions.getAllProjectRequest());
     try {
-        const { data } = await axios.get("http://localhost:4000/api/v1/project/getall",
+        const { data } = await axios.get("https://myportfolio-with-admin.onrender.com/api/v1/project/getall",
         {
             withCredentials: true
         });
@@ -102,7 +102,7 @@ export const getAllProjects = () => async (dispatch) => {
 export const deleteProject = (id) => async (dispatch) => {
     dispatch(projectSlice.actions.deleteProjectRequest());
     try {
-        const { data } = await axios.delete(`http://localhost:4000/api/v1/project/delete/${id}`,
+        const { data } = await axios.delete(`https://myportfolio-with-admin.onrender.com/api/v1/project/delete/${id}`,
         {
             withCredentials: true
         });
@@ -117,7 +117,7 @@ export const deleteProject = (id) => async (dispatch) => {
 export const updateProject = (id, updatedData) => async (dispatch) => {
     dispatch(projectSlice.actions.updateProjectRequest());
     try {
-        const { data } = await axios.put(`http://localhost:4000/api/v1/project/update/${id}`,updatedData,
+        const { data } = await axios.put(`https://myportfolio-with-admin.onrender.com/api/v1/project/update/${id}`,updatedData,
         {
             withCredentials: true,
             headers: {'Content-Type': 'multipart/form-data'}
@@ -133,7 +133,7 @@ export const updateProject = (id, updatedData) => async (dispatch) => {
 export const addNewProject = (projectDate) => async (dispatch) => {
     dispatch(projectSlice.actions.addProjectRequest());
     try {
-        const { data } = await axios.post("http://localhost:4000/api/v1/project/add", projectDate,
+        const { data } = await axios.post("https://myportfolio-with-admin.onrender.com/api/v1/project/add", projectDate,
         {
             withCredentials: true,
             headers: {'Content-Type': "multipart/form-data"}

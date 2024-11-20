@@ -5,7 +5,7 @@ const About = () => {
   const [user, setUser] = useState({});
   useEffect(()=>{
     const getMyProfile = async () =>{
-      const {data} = await axios.get('http://localhost:4000/api/v1/user/me/portfoilo', {
+      const {data} = await axios.get('https://myportfolio-with-admin.onrender.com/api/v1/user/me/portfoilo', {
         withCredentials: true
       });
       setUser(data.user);

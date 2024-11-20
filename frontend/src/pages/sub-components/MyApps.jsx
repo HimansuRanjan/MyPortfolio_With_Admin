@@ -7,7 +7,7 @@ const MyApps = () => {
   useEffect(() => {
     const getMyApps = async () => {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/softwareapps/getall",
+        "https://myportfolio-with-admin.onrender.com/api/v1/softwareapps/getall",
         { withCredentials: true }
       );
       setApps(data.softwareApps);

@@ -72,7 +72,7 @@ const applicationSlice = createSlice({
 export const getAllApplications = () => async (dispatch) => {
     dispatch(applicationSlice.actions.getAllApplicationRequest());
     try {
-        const { data } = await axios.get("http://localhost:4000/api/v1/softwareapps/getall",
+        const { data } = await axios.get("https://myportfolio-with-admin.onrender.com/api/v1/softwareapps/getall",
         {
             withCredentials: true
         });
@@ -87,7 +87,7 @@ export const getAllApplications = () => async (dispatch) => {
 export const deleteApplication = (id) => async (dispatch) => {
     dispatch(applicationSlice.actions.deleteApplicationRequest());
     try {
-        const { data } = await axios.delete(`http://localhost:4000/api/v1/softwareapps/delete/${id}`,
+        const { data } = await axios.delete(`https://myportfolio-with-admin.onrender.com/api/v1/softwareapps/delete/${id}`,
         {
             withCredentials: true
         });
@@ -102,7 +102,7 @@ export const deleteApplication = (id) => async (dispatch) => {
 export const addNewApplication = (applicationDate) => async (dispatch) => {
     dispatch(applicationSlice.actions.addApplicationRequest());
     try {
-        const { data } = await axios.post("http://localhost:4000/api/v1/softwareapps/add", applicationDate,
+        const { data } = await axios.post("https://myportfolio-with-admin.onrender.com/api/v1/softwareapps/add", applicationDate,
         {
             withCredentials: true,
             headers: {'Content-Type': "multipart/form-data"}

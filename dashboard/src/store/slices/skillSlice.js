@@ -87,7 +87,7 @@ const skillSlice = createSlice({
 export const getAllSkills = () => async (dispatch) => {
     dispatch(skillSlice.actions.getAllSkillRequest());
     try {
-        const { data } = await axios.get("http://localhost:4000/api/v1/skills/getall",
+        const { data } = await axios.get("https://myportfolio-with-admin.onrender.com/api/v1/skills/getall",
         {
             withCredentials: true
         });
@@ -102,7 +102,7 @@ export const getAllSkills = () => async (dispatch) => {
 export const deleteSkill = (id) => async (dispatch) => {
     dispatch(skillSlice.actions.deleteSkillRequest());
     try {
-        const { data } = await axios.delete(`http://localhost:4000/api/v1/skills/delete/${id}`,
+        const { data } = await axios.delete(`https://myportfolio-with-admin.onrender.com/api/v1/skills/delete/${id}`,
         {
             withCredentials: true
         });
@@ -117,7 +117,7 @@ export const deleteSkill = (id) => async (dispatch) => {
 export const updateSkill = (id, proficiency) => async (dispatch) => {
     dispatch(skillSlice.actions.updateSkillFailed());
     try {
-        const { data } = await axios.put(`http://localhost:4000/api/v1/skills/update/${id}`, {proficiency},
+        const { data } = await axios.put(`https://myportfolio-with-admin.onrender.com/api/v1/skills/update/${id}`, {proficiency},
         {
             withCredentials: true,
             headers: {"Content-Type": 'application/json'}
@@ -133,7 +133,7 @@ export const updateSkill = (id, proficiency) => async (dispatch) => {
 export const addNewSkill = (skillDate) => async (dispatch) => {
     dispatch(skillSlice.actions.addSkillRequest());
     try {
-        const { data } = await axios.post("http://localhost:4000/api/v1/skills/add", skillDate,
+        const { data } = await axios.post("https://myportfolio-with-admin.onrender.com/api/v1/skills/add", skillDate,
         {
             withCredentials: true,
             headers: {'Content-Type': "multipart/form-data"}

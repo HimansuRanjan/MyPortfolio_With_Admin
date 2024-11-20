@@ -19,7 +19,7 @@ const ViewProjects = () => {
 
   useEffect(()=>{
     const getProject = async()=>{
-      await axios.get(`http://localhost:4000/api/v1/project/get/${id}`,{
+      await axios.get(`https://myportfolio-with-admin.onrender.com/api/v1/project/get/${id}`,{
         withCredentials: true
       }).then((res)=>{
         console.log(res);
