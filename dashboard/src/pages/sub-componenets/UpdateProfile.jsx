@@ -107,13 +107,13 @@ const UpdateProfile = () => {
                 </div>
               </div>
               <div className="grid gap-5 w-full sm:w-22">
+              <Link to={user && user.resume && user.resume.url} target='_blank' >
                 <Label>Resume</Label>
-                <Link to={user && user.resume && user.resume.url} target='_blank'>
-                  <img src={resumePreview ? resumePreview : user && user.resume && user.resume.url} alt="resume" 
+                  <embed src={resumePreview ? resumePreview : user && user.resume && user.resume.url} alt="resume" 
                   className='w-full h-auto sm:w-72 sm:h-72 rounded-2xl'/>
                 </Link>
                 <div className="relative">
-                  <input type="file" className='avatar-update-btn' onChange={resumeHandler}/>
+                  <input type="file" accept="application/pdf" className='avatar-update-btn' onChange={resumeHandler}/>
                 </div>
               </div>
             </div>

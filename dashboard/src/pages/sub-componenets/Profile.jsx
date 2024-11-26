@@ -25,9 +25,13 @@ const Profile = () => {
                 className='w-full h-auto sm:w-72 sm:h-72 rounded-2xl'/>
               </div>
               <div className="grid gap-2 w-full sm:w-22">
-                <Label>Resume</Label>
-                <img src={user && user.resume && user.resume.url} alt="resume" 
+              <Link to={user && user.resume && user.resume.url} target='_blank'>
+              <Label>Resume</Label>
+              </Link>
+                <embed src={user && user.resume && user.resume.url} alt="resume" 
                 className='w-full h-auto sm:w-72 sm:h-72 rounded-2xl'/>
+              
+
               </div>
             </div>
             <div className="grid gap-2">
