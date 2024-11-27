@@ -110,6 +110,7 @@ const UpdateProfile = () => {
               <Link to={user && user.resume && user.resume.url} target='_blank' >
                 <Label>Resume</Label>
                   <embed src={resumePreview ? resumePreview : user && user.resume && user.resume.url} alt="resume" 
+                  type="application/pdf"
                   className='w-full h-auto sm:w-72 sm:h-72 rounded-2xl'/>
                 </Link>
                 <div className="relative">

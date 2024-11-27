@@ -165,10 +165,7 @@ export const updateProfile = catchAsyncErrors(async (req, res, next) => {
     // Re-Uploading Resume to cloudnary
     const cloudinaryResponseResume = await cloudinary.uploader.upload(
       resume.tempFilePath,
-      { 
-        resource_type: 'raw',
-        folder: "MY_RESUME" 
-      }
+      { folder: "MY_RESUME" }
     );
     newUserData.resume = {
       public_id: cloudinaryResponseResume.public_id,

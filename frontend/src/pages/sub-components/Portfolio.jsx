@@ -29,7 +29,7 @@ const Portfolio = () => {
         >
           MY{" "}
           <span className="text-tubeLight-effect font-extrabold">
-            PORTFOLIO
+            PROJECTS
           </span>
         </h1>
         <h1
@@ -53,7 +53,9 @@ const Portfolio = () => {
                   <img
                     src={element.projectBanner && element.projectBanner.url}
                     alt={element.title}
+                    className="w-300 h-185"
                   />
+                  <p>{element.title}</p>
                 </Link>
               );
             })
@@ -64,6 +66,7 @@ const Portfolio = () => {
                   <img
                     src={element.projectBanner && element.projectBanner.url}
                     alt={element.title}
+                    className="w-300 h-185"
                   />
                   <p>{element.title}</p>
                 </Link>

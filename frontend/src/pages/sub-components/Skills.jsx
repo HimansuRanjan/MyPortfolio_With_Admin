@@ -20,7 +20,7 @@ const Skills = () => {
       lg:text-[3.8rem] tracking-[15px] dancing_text mx-auto w-fit">
         SKILLS
       </h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
         {skills &&
           skills.map((element) => {
             return (

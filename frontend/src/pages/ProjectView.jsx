@@ -66,15 +66,17 @@ const ProjectView = () => {
               <div className="mt-10 flex flex-col gap-5">
                 <div className="w-full sm:col-span-4">
                   <h1 className="text-2xl font-bold mb-4">{title}</h1>
-                  <img
-                    src={
-                      projectBannerPreview
-                        ? projectBannerPreview
-                        : "/avatarHolder.jpg"
-                    }
+                  <Link to={projectLink}>
+                    <img
+                      src={
+                        projectBannerPreview
+                          ? projectBannerPreview
+                          : "/avatarHolder.jpg"
+                      }
                     alt="projectBanner"
                     className="w-full h-auto"
                   />
+                  </Link>
                 </div>
                 <div className="w-full sm:col-span-4">
                   <p className="text-2xl mb-2">Description:</p>

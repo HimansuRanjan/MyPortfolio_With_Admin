@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const Timeline = () => {
   const [timeline, setTimeline] = useState([]);
+  const [user, setUser] = useState({});
   useEffect(() => {
     const getMyTimeline = async () => {
       const { data } = await axios.get(
@@ -12,10 +13,27 @@ const Timeline = () => {
       setTimeline(data.timelines);
     };
     getMyTimeline();
+
+    const getMyProfile = async () =>{
+      const {data} = await axios.get('https://myportfolio-with-admin.onrender.com/api/v1/user/me/portfoilo', {
+        withCredentials: true
+      });
+      setUser(data.user);
+    };
+    getMyProfile();
+
   }, []);
   return (
     <div>
     <h1 className="overflow-y-hidden text-[2rem] sm:text-[1.75rem] md:text-[2.2rem] lg:text-[2.8rem] mb-4 font-extrabold">Timeline</h1>
+    <div className="grid md:grid-cols-2 my-8 sm:my-20 gap-14">
+        <div className="flex justify-center items-center">
+            <img
+              src={user.avatar && user.avatar.url}
+              alt={user && user.fullName}
+              className="bg-white p-2 sm:p-4  h-[240px] sm:h-[340px] md:h-[350px] lg:h-[450px]"
+            />
+        </div>
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
         {timeline &&
           timeline.map((element) => {
@@ -45,6 +63,7 @@ const Timeline = () => {
             );
           })}
       </ol>
+      </div>
     </div>
   );
 };

@@ -32,12 +32,12 @@ const Hero = () => {
       </div>
       <h1 className="text-[1.3rem] sm:text-[1.75rem] 
       md:text-[2.2rem] lg:text-[2.8rem] tracking-[2px] mb-4">
-        Hey, I'm Himansu Ranjan Patra
+        Hey, I'm Himansu Ranjan
       </h1>
       <h1 className="text-tubeLight-effect overflow-x-hidden text-[1.3rem] 
       sm:text-[1.75rem] md:text-[2.2rem] lg:text-[2.8rem] tracking-[15px]">
         <Typewriter
-          words={["FULLSTACK DEVELOPER", "YOUTUBER", "FREELANCER"]}
+          words={["SOFTWARE DEVELOPER"]}
           loop={50}
           cursor
           typeSpeed={70}
